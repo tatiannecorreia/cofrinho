@@ -6,12 +6,26 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:gh-pages": "NODE_ENV=production npm run build",
+    "deploy": "npm run build:gh-pages && gh-pages -d dist",
+    "cap:add": "cap add",
+    "cap:sync": "cap sync",
+    "cap:open": "cap open",
+    "android:build": "npm run build && npx cap sync && npx cap open android",
+    "android:build:apk": "npm run build && npx cap sync && cd android && ./gradlew assembleDebug"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "recharts": "^2.10.3"
+    "recharts": "^2.10.3",
+    "@capacitor/core": "^5.5.1",
+    "@capacitor/cli": "^5.5.1",
+    "@capacitor/android": "^5.5.1",
+    "@capacitor/app": "^5.0.6",
+    "@capacitor/haptics": "^5.0.6",
+    "@capacitor/keyboard": "^5.0.6",
+    "@capacitor/status-bar": "^5.0.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
