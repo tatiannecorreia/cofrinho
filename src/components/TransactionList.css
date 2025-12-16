@@ -1,0 +1,136 @@
+.transaction-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f3e5f5;
+  border-radius: 12px;
+  border-left: 4px solid;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.transaction-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(156, 39, 176, 0.2);
+}
+
+.transaction-item.income {
+  border-left-color: #2e7d32;
+  background: linear-gradient(90deg, #e8f5e9 0%, #f3e5f5 100%);
+}
+
+.transaction-item.expense {
+  border-left-color: #c62828;
+  background: linear-gradient(90deg, #ffebee 0%, #f3e5f5 100%);
+}
+
+.transaction-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.transaction-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.transaction-description {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.transaction-amount {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.transaction-amount.income {
+  color: #2e7d32;
+}
+
+.transaction-amount.expense {
+  color: #c62828;
+}
+
+.transaction-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.transaction-category {
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: white;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.transaction-date {
+  color: #666;
+}
+
+.btn-delete-transaction {
+  background: #ef5350;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete-transaction:hover {
+  background: #d32f2f;
+  transform: scale(1.1);
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  padding: 2rem;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .transaction-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .transaction-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
